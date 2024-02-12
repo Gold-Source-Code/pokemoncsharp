@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Reflection;
 
 class Budokai
 {
     public static void Main(string[] args)
     {
+    // Trainers get created.
         Console.WriteLine("What's your name?");
         string? answer_trainername1 = Console.ReadLine();
         if(answer_trainername1 == null){
@@ -17,51 +19,43 @@ class Budokai
 
         Trainer trainer1 = new Trainer(answer_trainername1);
         Trainer trainer2 = new Trainer(answer_trainername2);
+    // Pokemons get added to belt.
+        for (int i = 0; i < 2; i++){
+          AskPokemon(trainer1);}
+        for (int i = 0; i < 2; i++){
+          AskPokemon(trainer2);}
 
-        Console.WriteLine("What do you want to call your Charmander?");
-        string? answer_pokemonname = Console.ReadLine();
-        if(answer_pokemonname == null){
-          answer_pokemonname = "N/A";
-        }
-      
-        Console.WriteLine("Which Pokemon do you want to pull out?");
-        string? PokeballIndexAsk = Console.ReadLine();
-        int PokeballIndex = Convert.ToInt32(PokeballIndexAsk);
-        if(PokeballIndexAsk == null){
-          PokeballIndex = 0;
-          }
-        else{
-          PokeballIndex = PokeballIndex - 1;
-          }
-        
-        trainer1.AddToBelt(new Pokeball(new Charmander(answer_pokemonname, "Fire", "Water")), PokeballIndex);
+    // Battle is made.
+    Battle battle1 = new Battle(trainer1,trainer2);
+    Arena arena1 = new Arena(trainer1,trainer2, battle1);
+    // Scoreboard gets made.
+    Arena.scoreboardcreate();
+    arena1.battleloop("start"); 
+    // PokeballIndex(2) are used to identify which pokemon is picked.
+    // Growl loop.
+      // battle.attackloop(trainer1, PokeballIndex, trainer2, PokeballIndex2);
+    }
+// Function creates pokemon, placed into PokeBelt List.
+  static void AskPokemon(Trainer trainer){
+      Console.WriteLine("What Pokemon would you like to add? 1. Squirtle 2. bulbasaur 3. charmander");
+      string? Pokemon_type = Console.ReadLine();
+      Console.WriteLine("What do you want to call your Pokemon?");
+      string? answer_pokemonname = Console.ReadLine();
+      if(answer_pokemonname == null){
+        answer_pokemonname = "N/A";
+      }
 
-
-        for x in i{
-          
-        }
-        // for loop : belt { loop door belt heen en pak de pokeballs en gebruik dan de code hieronder in de loop.
-
-        Console.WriteLine(trainer1.getTrainerName() + " VS. " + trainer2.getTrainerName());
-        Console.WriteLine(PokeballIndex);
-        Console.WriteLine("You pulled out " + trainer1.PokeBelt[PokeballIndex].GetPokemon().getName());
-        Console.WriteLine("===============");
-        Console.WriteLine(Pokeball1.GetPokemon().getName());
-        Console.WriteLine(Pokeball1.GetPokemon().getStrength());
-        Console.WriteLine(Pokeball1.GetPokemon().getWeakness());
-        Console.WriteLine("===============");
-        string? answer1 = "y";
-      while (answer1 == "y"){
-        Console.WriteLine("Use Growl? [Y/N]");
-          answer1 = Console.ReadLine().ToLower();
-            if (answer1 == "y"){
-              for (int i = 0; i < 10; i++){
-                Console.WriteLine(charmander.Growl());
-                }
-            }
-        else{
-          Console.WriteLine(charmander.getName() + " was returned to Pokeball " + (PokeballIndex + 1));
-        }
+      if(Pokemon_type == "1"){
+        Pokemon a = new Squirtle(answer_pokemonname);
+        trainer.AddToBelt(new Pokeball(a));
+      }
+      else if(Pokemon_type == "2"){
+        Pokemon b = new Bulbasaur(answer_pokemonname);
+        trainer.AddToBelt(new Pokeball(b));
+      }
+      else{
+        Pokemon c = new Charmander(answer_pokemonname);
+        trainer.AddToBelt(new Pokeball(c));
       }
     }
-}
+  }

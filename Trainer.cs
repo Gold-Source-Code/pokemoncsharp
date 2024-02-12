@@ -1,3 +1,5 @@
+using System.Dynamic;
+
 class Trainer{
     public String trainer_name;
 
@@ -5,6 +7,7 @@ class Trainer{
         this.trainer_name = AskTrainerName;
     }
     public List<Pokeball> PokeBelt = new List<Pokeball>();
+    public List<Pokeball> BenchedPokeBelt = new List<Pokeball>();
     public String getTrainerName()
     {
         return trainer_name;
@@ -15,12 +18,18 @@ class Trainer{
     }
 
     //function addToBelt() 1. pokeball 2. PokeballIndex
-    public void AddToBelt(Pokeball pokeball, int PokeballIndex){
+    public void AddToBelt(Pokeball pokeball){
         PokeBelt.Add(pokeball);
     }
 
-    public List<Pokeball> getBelt() {
-        return PokeBelt;
+    public List<Pokeball> getBelt() { 
+        for(int i=0;i<PokeBelt.Count;i++){
+            Console.WriteLine((i + 1) + " - " + PokeBelt[i].GetPokemon().getName());
+        }
+        return this.PokeBelt;
     }
-}
-
+    
+    public Pokeball getBall(int pokeball_index) {
+        return this.PokeBelt[pokeball_index];
+    }
+}   

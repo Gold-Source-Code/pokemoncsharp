@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\app\\app.csproj": {}
+    "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\pokemoncsharp\\app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\app\\app.csproj": {
+    "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\pokemoncsharp\\app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\app\\app.csproj",
+        "projectUniqueName": "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\pokemoncsharp\\app.csproj",
         "projectName": "app",
-        "projectPath": "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\app\\app.csproj",
+        "projectPath": "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\pokemoncsharp\\app.csproj",
         "packagesPath": "C:\\Users\\maikh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\app\\obj\\",
+        "outputPath": "C:\\Users\\maikh\\Downloads\\school\\software\\jaar2\\Opdrachten\\pokemoncsharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maikh\\AppData\\Roaming\\NuGet\\NuGet.Config"

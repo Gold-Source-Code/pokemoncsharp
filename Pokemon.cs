@@ -13,11 +13,15 @@ abstract class Pokemon{
         return name;
     }
 
-        public string getStrength(){
+    public void setFaintState(String name){
+        this.name = name + " (Fainted)";
+    }
+
+    public string getStrength(){
         return strength;
     }
 
-        public string getWeakness(){
+    public string getWeakness(){
         return weakness;
     }
 
@@ -25,19 +29,19 @@ abstract class Pokemon{
  
 }
 class Charmander : Pokemon{
-        public Charmander(string name, string strength, string weakness) : base(name, strength, weakness){ }
+        public Charmander(string name) : base(name, "Grass", "Water"){ }
         public override string Growl(){
             return this.getName() + " says Charmander!";
         }
 }
 class Bulbasaur : Pokemon{
-        public Bulbasaur(string name, string strength, string weakness) : base(name, strength, weakness){ }
+        public Bulbasaur(string name) : base(name, "Water", "Fire"){ }
         public override string Growl(){
             return this.getName() + " says Bulbasaur!";
         }
 }
 class Squirtle : Pokemon{
-        public Squirtle(string name, string strength, string weakness) : base(name, strength, weakness){ }
+        public Squirtle(string name) : base(name, "Fire", "Grass"){ }
         public override string Growl(){
             return this.getName() + " says Squirtle!";
         }
