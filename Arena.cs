@@ -74,7 +74,11 @@ public int selectpokemon2(Trainer player2){
 
     public void battleloop(string winner){
         while (true){
+            scoreboard["player1"] = 0;
+            scoreboard["player1"] = 0;
         if (winner == "start" || winner == "draw"){
+            Console.WriteLine("Player 1: " + scoreboard["player1"]);
+            Console.WriteLine("Player 2: " + scoreboard["player2"]);
             selectpokemon(trainer1);
             selectpokemon2(trainer2);
             showselection(pokemon1.getName(), trainer1);
@@ -82,11 +86,17 @@ public int selectpokemon2(Trainer player2){
             battleloop(battle.checktype(pokemon1, pokemon2));
         }
         if (winner == "one"){
+            scoreboard["player1"] = scoreboard["player1"] + 1;
+            Console.WriteLine("Player 1: " + scoreboard["player1"]);
+            Console.WriteLine("Player 2: " + scoreboard["player2"]);
             selectpokemon2(trainer2);
             showselection(pokemon2.getName(), trainer2);
             battleloop(battle.checktype(pokemon1, pokemon2));
         }
         if (winner == "two"){
+            scoreboard["player2"] = scoreboard["player2"] + 1;
+            Console.WriteLine("Player 1: " + scoreboard["player1"]);
+            Console.WriteLine("Player 2: " + scoreboard["player2"]);
             selectpokemon(trainer1);
             showselection(pokemon1.getName(), trainer1);
             battleloop(battle.checktype(pokemon1, pokemon2));
